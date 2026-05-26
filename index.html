@@ -20,7 +20,7 @@
         <span>Museo Local</span>
       </h1>
 
-      <div class="logo-container">
+      <div class="logo-container" id="sidebar-card" role="button" tabindex="0" aria-label="Sobre el museo La Troje">
         <img src="img/logo.png" alt="Logo La Troje" class="main-logo" />
         <h2 class="logo-text">Almoloya, Hidalgo</h2>
       </div>
@@ -63,6 +63,38 @@
   <div id="lightbox-overlay" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
     <button id="lightbox-close" class="lightbox-close" aria-label="Cerrar imagen">&times;</button>
     <img id="lightbox-image" src="" alt="" />
+  </div>
+
+  <!-- ===== SIDEBAR MODAL ===== -->
+  <div id="sidebar-modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Sobre el Museo La Troje">
+    <div class="modal-backdrop" id="sidebar-modal-backdrop"></div>
+    <div class="modal-content">
+      <button id="sidebar-modal-close" class="modal-close" aria-label="Cerrar">&times;</button>
+
+      <!-- Animated infinite scene banner -->
+      <div class="sidebar-modal-scene">
+        <div class="scene-layer scene-layer--back"></div>
+        <div class="scene-layer scene-layer--mid"></div>
+        <div class="scene-layer scene-layer--front"></div>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-header-content">
+          <img src="img/logo.png" alt="Logo" class="modal-logo" />
+          <div class="modal-title-group">
+            <h2 class="modal-piece-title">Restaurante La Troje</h2>
+            <h3 class="modal-subtitle">Almoloya, Hidalgo</h3>
+          </div>
+        </div>
+        <div class="modal-separator sidebar-separator" style="background-color: #C5A96D;">✦</div>
+        <div class="modal-description sidebar-modal-text">
+          <p>Fundado y atendido con el corazón por sus dueños, los esposos <strong>Silvia Cerón Saavedra</strong> y <strong>Carlos Rodda Ortega</strong>, Restaurant La Troje es un rincón lleno de nostalgia y calidez que en septiembre de 2026 celebra con orgullo sus primeros <strong>10 años de historia</strong>.</p>
+          <p>En nuestra casa, el aroma a auténtica comida tradicional te envuelve mientras viajas en el tiempo gracias a una decoración única, rodeada de fotografías antiguas y valiosas piezas históricas que rinden tributo a la hermosa tradición del pulque.</p>
+          <p>Esta atmósfera tan viva y hospitalaria ha hecho que La Troje sea el lugar favorito tanto de viajeros internacionales de países como Canadá, España e Italia, como de grandes personalidades que nos han honrado con su mesa — entre ellos el escritor <em>Carlos Fuentes</em>, el gobernador <em>Julio Menchaca</em>, el torero <em>Federico Pizarro</em> y los músicos de <em>La Trakalosa de Monterrey</em> —, además de toda la gente de la localidad que aprecia comer y pasar un buen rato en el sitio.</p>
+        </div>
+        <p class="sidebar-modal-footer">— Almoloya, Hidalgo · Desde 2016 —</p>
+      </div>
+    </div>
   </div>
 
   <!-- ===== DECORATIVE ELEMENTS ===== -->

@@ -22,23 +22,23 @@ const museumPieces = [
   },
   {
     id: 3,
-    name: "Odre",
+    name: "Acocote",
     image: "img/odre.png",
     color: "#BFA26E",
     textColor: "#FFFFFF",
     keywords: ["Transporte", "Líquidos", "Antigüedad", "Cuero"],
     tagColors: ["#8B7240", "#9A824E", "#7A6436", "#6B5830"],
-    description: `<p>Es un recipiente antiguo fabricado con piel curtida de animales, generalmente cabra o carnero, utilizado para almacenar y transportar líquidos como vino, aceite o agua. Eran bolsas de cuero impermeabilizadas y selladas que se usaban desde la antigüedad por su durabilidad y ligereza. El odre no es un objeto de un año específico, sino un recipiente milenario utilizado desde la antigüedad hasta la Baja Edad Media.</p>`
+    description: `<p>Instrumento tradicional e Idéntico desde la época prehipánica, el acocote es un guaje alargado y hueco con dos perforaciones que el tlachiquero utiliza como una pipa de succión. Al generar vacio con la boca, extrae el aguamiel del corazón del maguey de forma segura para la planta, obteniendo asi la materia prima que después sefermentará para convertirse en pulque.</p>`
   },
   {
     id: 4,
-    name: "Barril de madera (tonel)",
+    name: "Castañas",
     image: "img/barril_de_madera.png",
     color: "#A8845C",
     textColor: "#FFFFFF",
     keywords: ["Comercio", "Almacenamiento", "Añejamiento"],
     tagColors: ["#7A6040", "#8B704A", "#6B5536", "#5C4A2E"],
-    description: `<p>Utilizado predominantemente desde el siglo I d. C. hasta mediados del siglo XX, este contenedor revolucionó el comercio global gracias a su diseño de duelas y aros de metal que permitía rodar grandes volúmenes de líquidos y suministros con facilidad. Más allá de su resistencia para el transporte en barcos y carretas, el barril sigue siendo esencial en la industria actual como herramienta de añejamiento.</p>`
+    description: `<p>Es un contenedor tradicional de madera, de forma ovalada y aplanada de un lado para adaptarse cómodamente a la espalda del tlachiquero o a los costados de un burro. Históricamente reforzada con aros de metal o cuero, se utiliza para almacenar y transportar el aguamiel recién extraído. con el acocote desde el magueyal hasta el tinacal, progiendo el liquido de la luz y el calor para evitar que se fermente antes de tiempo.</p>`
   },
   {
     id: 5,
@@ -284,9 +284,38 @@ document.addEventListener('keydown', (e) => {
       closeLightbox();
     } else if (modalOverlay.classList.contains('active')) {
       closeModal();
+    } else if (sidebarModalOverlay.classList.contains('active')) {
+      closeSidebarModal();
     }
   }
 });
+
+/* ===== SIDEBAR MODAL ===== */
+const sidebarCard        = document.getElementById('sidebar-card');
+const sidebarModalOverlay = document.getElementById('sidebar-modal-overlay');
+const sidebarModalClose  = document.getElementById('sidebar-modal-close');
+const sidebarModalBackdrop = document.getElementById('sidebar-modal-backdrop');
+
+function openSidebarModal() {
+  sidebarModalOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  sidebarModalClose.focus();
+}
+
+function closeSidebarModal() {
+  sidebarModalOverlay.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+sidebarCard.addEventListener('click', openSidebarModal);
+sidebarCard.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    openSidebarModal();
+  }
+});
+sidebarModalClose.addEventListener('click', closeSidebarModal);
+sidebarModalBackdrop.addEventListener('click', closeSidebarModal);
 
 /* ===== INIT ===== */
 renderCards();
